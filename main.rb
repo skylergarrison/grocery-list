@@ -2,7 +2,7 @@
 @grocery_list = Hash.new(0)
 
 def addItem(item)
-    @grocery_list[item.to_sym] += 1
+    @grocery_list[item.intern] += 1
 end
 
 addItem("bread")
