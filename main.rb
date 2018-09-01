@@ -1,7 +1,6 @@
 class Groc_List
-  attr_reader :username
-  attr_reader :password
-
+  attr_reader :username, :password
+  
   def initialize(username, password)
     @username = username
     @password = password
