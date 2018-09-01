@@ -1,15 +1,34 @@
+class Groc_List
+  attr_reader :username
+  attr_reader :password
 
-@grocery_list = Hash.new(0)
+  def initialize(username, password)
+    @username = username
+    @password = password
+    @grocery_list = Hash.new(0)
+  end
 
-def addItem(item)
-    @grocery_list[item.intern] += 1
+  public
+  def addItem(item)
+      @grocery_list[item.intern] += 1
+  end
+
+  def enumerate
+    @grocery_list.each {|key, value|
+      puts "#{key} => #{value}"
+    }
+  end
+
 end
 
-addItem("bread")
-addItem("bread")
-addItem("eggs")
-addItem("milk")
+list = Groc_List.new("skyler","dog")
 
-@grocery_list.each {|key, value|
-    puts "#{key} => #{value}"
-}
+puts list.username
+puts list.password
+
+list.addItem("bread")
+list.addItem("bread")
+list.addItem("eggs")
+list.addItem("milk")
+
+list.enumerate
